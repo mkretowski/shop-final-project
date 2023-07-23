@@ -1,0 +1,9 @@
+.dropdown-toggle::after {
+  display: none !important;
+}
+.dropdown-menu {
+  left: -100% !important;
+}
+.navbar {
+  transition: all 0.3s;
+}

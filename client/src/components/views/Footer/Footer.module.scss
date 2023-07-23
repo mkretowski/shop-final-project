@@ -1,0 +1,21 @@
+.socialLinks {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  line-height: 42px;
+  border: 2px solid;
+  border-radius: 50%;
+  color: white;
+  &:hover {
+    color: cyan;
+  }
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: cyan;
+    font-weight: 600;
+  }
+}
