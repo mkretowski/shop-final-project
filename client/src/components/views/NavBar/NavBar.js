@@ -28,8 +28,7 @@ const NavBar = () => {
   return (
     <Navbar
       expand="lg"
-      fixed={location.pathname === '/' ? 'top' : ''}
-      sticky={location.pathname === '/' ? '' : 'top'}
+      fixed="top"
       variant="dark"
       className={
         location.pathname !== '/' || vertScroll > 300 ? 'text-bg-dark' : ''

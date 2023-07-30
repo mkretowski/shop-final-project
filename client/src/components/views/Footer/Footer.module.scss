@@ -1,8 +1,10 @@
+@import '../../../styles/settings.scss';
+
 .socialLinks {
   display: inline-block;
   width: 3rem;
   height: 3rem;
-  line-height: 42px;
+  line-height: 43px;
   border: 2px solid;
   border-radius: 50%;
   color: white;
@@ -18,4 +20,8 @@
     color: cyan;
     font-weight: 600;
   }
+}
+
+h6 {
+  font-family: $font-header;
 }

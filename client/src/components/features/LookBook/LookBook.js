@@ -10,7 +10,7 @@ const LookBook = () => (
       />
       <Card.ImgOverlay className="row align-items-center">
         <Col>
-          <Card.Title className="fs-1">Lookbook</Card.Title>
+          <Card.Title style={{ fontSize: '5rem' }}>Lookbook</Card.Title>
           <Button variant="light" href="#">
             Get inspired
           </Button>

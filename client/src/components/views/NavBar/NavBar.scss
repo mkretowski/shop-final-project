@@ -1,3 +1,4 @@
+@import '../../../styles/settings.scss';
 .dropdown-toggle::after {
   display: none !important;
 }
@@ -6,4 +7,8 @@
 }
 .navbar {
   transition: all 0.3s;
+  .navbar-brand {
+    font-family: $font-header;
+    font-size: 1.5rem;
+  }
 }
