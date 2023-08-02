@@ -45,4 +45,12 @@ export class AuthService {
       access_token: accessToken,
     };
   }
+  public async getUserInfo(email: string) {
+    const user = await this.usersService.getByEmail(email);
+    if (user) {
+      const { ...userInfo } = user;
+      return userInfo;
+    }
+    return null;
+  }
 }

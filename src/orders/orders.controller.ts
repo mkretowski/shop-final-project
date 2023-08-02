@@ -31,6 +31,11 @@ export class OrdersController {
     if (!order) throw new NotFoundException('Order not found');
     return order;
   }
+  @Get('/user/:userId')
+  @UseGuards(JwtAuthGuard)
+  async getByUserId(@Param('userId') userId: string) {
+    return this.ordersService.getByUserId(userId);
+  }
   @Delete('/:id')
   @UseGuards(JwtAuthGuard)
   async deleteById(@Param('id', new ParseUUIDPipe()) id: string) {

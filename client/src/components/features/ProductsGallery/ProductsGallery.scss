@@ -1,0 +1,15 @@
+@import '../../../styles/settings.scss';
+.products-gallery {
+  .carousel-indicators {
+    bottom: -10%;
+  }
+}
+
+.carousel-inner {
+  width: 100%;
+  .carousel-item {
+    h3 {
+      font-family: $font-header;
+    }
+  }
+}

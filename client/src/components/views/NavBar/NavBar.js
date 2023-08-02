@@ -12,9 +12,11 @@ import './NavBar.scss';
 import { Button } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getUser } from '../../../redux/userReducer';
 
 const NavBar = () => {
-  const user = true;
+  const user = useSelector(getUser);
   let location = useLocation();
   const [vertScroll, setVertScroll] = useState(0);
 
@@ -64,7 +66,7 @@ const NavBar = () => {
                 </Dropdown.Item>
               )}
               {user && (
-                <Dropdown.Item className="text-center" as={Link} to="/">
+                <Dropdown.Item className="text-center" as={Link} to="/myorders">
                   My Orders
                 </Dropdown.Item>
               )}
@@ -81,7 +83,12 @@ const NavBar = () => {
               )}
             </Dropdown.Menu>
           </Dropdown>
-          <Button variant="link" className="text-white mx-2" as={Link} to="/">
+          <Button
+            variant="link"
+            className="text-white mx-2"
+            as={Link}
+            to="/cart"
+          >
             <FontAwesomeIcon icon={faBasketShopping} />
           </Button>
         </Col>
@@ -91,18 +98,15 @@ const NavBar = () => {
           id="basic-navbar-nav"
           className="text-center justify-content-center"
         >
-          <Nav>
+          <Nav className="align-items-lg-center">
             <Nav.Link className="px-3" as={NavLink} to="/">
               Home
             </Nav.Link>
-            <Nav.Link className="px-3" as={NavLink} to="/">
-              Categories
+            <Nav.Link className="px-3" as={NavLink} to="/products">
+              All Products
             </Nav.Link>
             <Nav.Link className="px-3" as={NavLink} to="/">
               Sales
-            </Nav.Link>
-            <Nav.Link className="px-3" as={NavLink} to="/">
-              Blog
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

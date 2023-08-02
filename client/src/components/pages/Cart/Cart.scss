@@ -1,0 +1,17 @@
+@import '../../../styles/settings.scss';
+
+.cart {
+  margin-top: 8rem;
+  .cart-products {
+    height: 10rem;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 768px) {
+  .cart {
+    .cart-products {
+      height: auto;
+    }
+  }
+}

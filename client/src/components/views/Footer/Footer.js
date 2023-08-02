@@ -16,7 +16,7 @@ const Footer = () => {
     event.preventDefault();
   };
   return (
-    <Col className="flex-grow-0 bg-dark text-center text-white">
+    <Col className="flex-grow-0 bg-dark text-center text-white mt-5">
       <Row className="fs-3 text-white">
         <Col className="d-inline-block my-3">
           <Link className={'mx-2 ' + styles.socialLinks} to="/">

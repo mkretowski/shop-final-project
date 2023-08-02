@@ -76,6 +76,7 @@ model ProductOnOrders {
   product        Product    @relation(fields: [productId], references: [id])
   productId      String
   quantity       Int
+  size           String     @default("")
 
-  @@id([orderId, productId])
+  @@id([orderId, productId, size])
 }

@@ -26,6 +26,14 @@ export class OrdersService {
       },
     });
   }
+  public getByUserId(userId: string): Promise<Order[]> {
+    return this.prismaService.order.findMany({
+      where: { userId },
+      include: {
+        products: true,
+      },
+    });
+  }
   public deleteById(id: Order['id']): Promise<Order> {
     return this.prismaService.order.delete({
       where: { id },
@@ -41,6 +49,7 @@ export class OrdersService {
             create: products.map((product) => ({
               product: { connect: { id: product.productId } },
               quantity: product.quantity,
+              size: product.size,
             })),
           },
         },
