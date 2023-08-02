@@ -42,7 +42,12 @@ import configuration from './config/configuration';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
     consumer
-      .apply(cors({ origin: 'http://localhost:8000', credentials: true }))
+      .apply(
+        cors({
+          origin: 'https://shop-final-project.onrender.com',
+          credentials: true,
+        }),
+      )
       .forRoutes({
         path: '*',
         method: RequestMethod.ALL,
