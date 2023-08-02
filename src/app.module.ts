@@ -22,8 +22,11 @@ import configuration from './config/configuration';
     ProductsModule,
     OrdersModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public/uploads'),
+      rootPath: join(__dirname, '../../', 'public/uploads'),
       serveRoot: '/api/uploads',
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '../../', 'client', 'build'),
     }),
     UsersModule,
     AuthModule,
@@ -39,7 +42,7 @@ import configuration from './config/configuration';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
     consumer
-      .apply(cors({ origin: 'http://localhost:3000', credentials: true }))
+      .apply(cors({ origin: 'http://localhost:8000', credentials: true }))
       .forRoutes({
         path: '*',
         method: RequestMethod.ALL,

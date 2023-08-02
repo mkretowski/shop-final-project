@@ -27,7 +27,7 @@ const Cart = () => {
       if (reqStatus === 201) {
         dispatch(fetchOrdersByUser(userId));
         dispatch(clearCart());
-        return navigate('/orders/myorders');
+        return navigate('/myorders');
       } else if (reqStatus === 400) {
         return 'clientError';
       } else {
