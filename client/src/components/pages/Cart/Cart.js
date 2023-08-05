@@ -43,12 +43,12 @@ const Cart = () => {
       <Row className="d-flex justify-content-center align-items-center fs-1">
         YOUR CART
       </Row>
-      <Row className="justify-content-end align-items-center my-2">
+      <Row className="justify-content-end align-items-center">
         {cartProducts.length ? (
           cartProducts.map((item) => (
             <Row
               key={item.productId + item.size}
-              className="d-flex align-items-center my-2 cart-products"
+              className="d-flex align-items-center my-1 cart-products"
             >
               <CartProduct
                 productId={item.productId}
@@ -65,12 +65,12 @@ const Cart = () => {
       </Row>
 
       <Row className="justify-content-end align-items-center my-2">
-        <Col className="d-flex col-12 justify-content-center align-items-end">
+        <Col className="d-flex justify-content-end">
           <CartSummary />
         </Col>
       </Row>
-      <Row className="d-flex justify-content-end align-items-end my-2">
-        <Col className="d-flex justify-content-center align-items-end my-2">
+      <Row className="d-flex justify-content-end align-items-end">
+        <Col className="d-flex justify-content-end align-items-end">
           <Button
             variant="dark"
             type="submit"

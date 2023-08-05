@@ -40,12 +40,12 @@ const CartProduct = ({ productId, size, quantity }) => {
   }, [productId, quant, price, size, dispatch]);
 
   return (
-    <Card className="mb-3 mx-2 h-100 cart-product">
+    <Card className="mb-3 h-100 cart-product">
       <Row className="d-flex h-100 p-3">
         <Col className="d-flex justify-content-center col-12 col-md-auto h-100 px-3">
           <Card.Img
-            className="object-fit-cover h-100"
-            src={`${API_URL}/uploads/${name}.jpg`}
+            className="object-fit-cover"
+            src={`${API_URL}/uploads/${name.replace(' ', '')}.jpg`}
             alt={productId}
           />
         </Col>

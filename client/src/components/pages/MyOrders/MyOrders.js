@@ -17,22 +17,17 @@ const MyOrders = () => {
         <Row className="d-flex justify-content-center align-items-center fs-1">
           YOUR ORDERS
         </Row>
-        <Row className="justify-content-end align-items-center my-2">
-          {orders.length ? (
-            orders.map((order) => (
-              <Row
-                key={order.id}
-                className="d-flex align-items-center my-2 cart-products"
-              >
-                <OrderItem order={order} />
-              </Row>
-            ))
-          ) : (
-            <Row className="d-flex my-5 justify-content-center align-items-center fs-4">
-              Make an order first!
+        {orders.length ? (
+          orders.map((order) => (
+            <Row key={order.id} className="d-flex align-items-center my-2">
+              <OrderItem order={order} />
             </Row>
-          )}
-        </Row>
+          ))
+        ) : (
+          <Row className="d-flex my-5 justify-content-center align-items-center fs-4">
+            Make an order first!
+          </Row>
+        )}
       </Container>
     );
   }

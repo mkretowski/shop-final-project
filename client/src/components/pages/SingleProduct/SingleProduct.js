@@ -23,6 +23,9 @@ const SingleProduct = () => {
   const [productData, setProductData] = useState({});
   const [selectedSize, setSelectedSize] = useState(false);
   const availableSizes = ['S', 'M', 'L', 'XL'];
+  const formattedName = productData.name
+    ? productData.name.replace(' ', '')
+    : '';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,7 +69,7 @@ const SingleProduct = () => {
             className="object-fit-cover"
             style={{ height: '18rem' }}
             variant="top"
-            src={`${API_URL}/uploads/${productData.name}.jpg`}
+            src={`${API_URL}/uploads/${formattedName}.jpg`}
             alt={productData.name}
           />
         </Col>

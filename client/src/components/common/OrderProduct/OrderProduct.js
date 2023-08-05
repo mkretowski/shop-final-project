@@ -17,7 +17,7 @@ const CartProduct = ({ productId, size, quantity }) => {
         <Col className="d-flex justify-content-center col-12 col-md-auto h-100 px-3">
           <Card.Img
             className="object-fit-cover h-100"
-            src={`${API_URL}/uploads/${name}.jpg`}
+            src={`${API_URL}/uploads/${name.replace(' ', '')}.jpg`}
             alt={productId}
           />
         </Col>

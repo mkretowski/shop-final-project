@@ -35,15 +35,18 @@ const ProductsGallery = ({ products }) => {
         onSelect={handleSelect}
         slide
         variant="dark"
-        className="mx-3 products-gallery"
+        className="mx-0 px-0 products-gallery"
       >
         {chunkedProductsArray.map((productsChunk, index) => (
-          <Carousel.Item className="col justify-content-center" key={index}>
-            <Stack direction="horizontal">
+          <Carousel.Item key={index}>
+            <Stack
+              direction="horizontal"
+              className="d-flex col justify-content-center"
+            >
               {productsChunk.map((product) => (
                 <Col
                   key={product.id}
-                  className="d-flex col-12 col-xxl-3 col-lg-4 col-md-6 m-0 p-3 text-center justify-content-center"
+                  className="d-flex col-12 col-xxl-3 col-lg-4 col-md-6 m-0 p-3 text-center"
                 >
                   <ProductBox {...product} />
                 </Col>

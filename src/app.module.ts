@@ -44,7 +44,11 @@ export class AppModule implements NestModule {
     consumer
       .apply(
         cors({
-          origin: 'https://shop-final-project.onrender.com',
+          origin: [
+            'http://localhost:3000',
+            'http://localhost:8000',
+            'https://dresscode.onrender.com',
+          ],
           credentials: true,
         }),
       )

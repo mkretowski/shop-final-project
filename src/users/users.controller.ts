@@ -15,10 +15,13 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 export class UsersController {
   constructor(private usersService: UsersService) {}
   @Get('/')
+  @UseGuards(AdminAuthGuard)
+  @UseGuards(JwtAuthGuard)
   getAll(): any {
     return this.usersService.getAll();
   }
   @Get('/:id')
+  @UseGuards(JwtAuthGuard)
   async getById(@Param('id', new ParseUUIDPipe()) id: string) {
     const user = await this.usersService.getById(id);
     if (!user) throw new NotFoundException('User not found');
