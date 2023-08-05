@@ -24,7 +24,7 @@ const SingleProduct = () => {
   const [selectedSize, setSelectedSize] = useState(false);
   const availableSizes = ['S', 'M', 'L', 'XL'];
   const formattedName = productData.name
-    ? productData.name.replace(' ', '')
+    ? productData.name.replace(/ /g, '').replace(/-/g, '')
     : '';
 
   useEffect(() => {

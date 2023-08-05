@@ -19,7 +19,9 @@ const ProductBox = ({ id, name, price }) => {
         className="object-fit-cover"
         style={{ height: '18rem' }}
         variant="top"
-        src={`${API_URL}/uploads/${name.replace(' ', '')}.jpg`}
+        src={`${API_URL}/uploads/${name
+          .replace(/ /g, '')
+          .replace(/-/g, '')}.jpg`}
         alt={name}
       />
       <Card.ImgOverlay className="row align-items-center h-100 pt-0">
