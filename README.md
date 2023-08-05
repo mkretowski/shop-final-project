@@ -1,4 +1,4 @@
-demo: https://shop-final-project.onrender.com/
+demo: https://dresscode.onrender.com/
 
 
 
